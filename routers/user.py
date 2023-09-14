@@ -20,9 +20,9 @@ async def get_user(id: int = None, db: Session = Depends(get_db)):
 
 @router.put('/{id}', tags=['user'])
 async def update_user(id: int, data: UserDTO.User = None, db: Session = Depends(get_db)):
-    return UserService.update(data, db, id)
+    return UserService.update_user(data, db, id)
 
 
 @router.delete('/{id}', tags=['user'])
 async def delete_user(id: int, db: Session = Depends(get_db)):
-    return UserService.delete(db, id)
+    return UserService.delete_user(db, id)
